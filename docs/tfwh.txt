@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.1.0.0
+@version 0.2.0.0
 
 
 -- | One man went to mow
@@ -88,6 +88,45 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | TFwH 第2章 式,型,値
+module TFwH.Chap02
+
+-- | ユーザ定義演算子
+(+++) :: Int -> Int -> Int
+
+-- | 整数の2乗
+sqr :: Integer -> Integer
+
+-- | 無限大
+infinity :: Integer
+
+-- | 常に3になる定数関数
+three :: Integer -> Integer
+
+-- | 階乗関数
+factorial :: Integer -> Integer
+
+-- | 下請け関数
+fact :: (Integer, Integer) -> Integer
+
+-- | 無限ループする関数
+to :: Bool -> Bool
+type Pin = Int
+
+-- | Person(例)
+data Person
+Person :: Pin -> Person
+[pin] :: Person -> Pin
+samePerson :: Person -> Person -> Bool
+
+-- | 頻出単語
+cwords :: Int -> FilePath -> FilePath -> IO ()
+
+-- | 2次方程式の解
+roots :: (Float, Float, Float) -> (Float, Float)
+instance GHC.Classes.Eq TFwH.Chap02.Person
 
 module TFwH.Chap01.ExG
 song :: Int -> String
