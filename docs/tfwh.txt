@@ -145,6 +145,10 @@ words' :: Text -> [Word]
 --   </pre>
 words'' :: Text -> [Word]
 
+
+-- | 練習問題 C
+--   
+--   $desc
 module TFwH.Chap01.ExC
 
 module TFwH.Chap01.ExB
