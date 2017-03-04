@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE FlexibleInstances #-}</span><span>
+</span><a name="line-2"></a><span class="hs-pragma">{-# LANGUAGE ScopedTypeVariables #-}</span><span>
+</span><a name="line-3"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">TFwH</span><span class="hs-operator">.</span><span class="hs-identifier">Chap01</span><span class="hs-operator">.</span><span class="hs-identifier">ExE</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-4"></a><span>
+</span><a name="line-5"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Typeable</span><span>
+</span><a name="line-6"></a><span class="hs-keyword">type</span><span> </span><a name="Fun"><a href="TFwH.Chap01.ExE.html#Fun"><span class="hs-identifier">Fun</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Int</span><span>
+</span><a name="line-7"></a><span class="hs-keyword">instance</span><span> </span><span class="hs-identifier hs-type">Show</span><span> </span><a href="TFwH.Chap01.ExE.html#Fun"><span class="hs-identifier hs-type">Fun</span></a><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-8"></a><span>  </span><a name="local-8214565720323784721"><span class="hs-identifier">show</span></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">show</span><span> </span><span class="hs-operator hs-var">.</span><span> </span><span class="hs-identifier hs-var">typeOf</span><span>
+</span><a name="line-9"></a><span>
+</span><a name="line-10"></a><span class="hs-comment">-- ^</span><span>
+</span><a name="line-11"></a><span class="hs-comment">-- prop&gt; (x + y) + z == (x :: Int) + (y + z)</span><span>
+</span><a name="line-12"></a><span class="hs-comment">-- prop&gt; 0 + y == (y :: Int)</span><span>
+</span><a name="line-13"></a><span class="hs-comment">-- prop&gt; x + 0 == (x :: Int)</span><span>
+</span><a name="line-14"></a><span class="hs-comment">-- prop&gt; (xs ++ ys) ++ zs == (xs :: String) ++ (ys ++ zs)</span><span>
+</span><a name="line-15"></a><span class="hs-comment">-- prop&gt; [] ++ ys == (ys :: String)</span><span>
+</span><a name="line-16"></a><span class="hs-comment">-- prop&gt; xs ++ [] == (xs :: String)</span><span>
+</span><a name="line-17"></a><span class="hs-comment">-- prop&gt; (((f::Fun) . (g::Fun)) . (h::Fun)) (x::Int) == (f . (g . h)) x</span><span>
+</span><a name="line-18"></a><span class="hs-comment">-- prop&gt; (id . g) x == (g :: Fun) (x :: Int)</span><span>
+</span><a name="line-19"></a><span class="hs-comment">-- prop&gt; (f . id) x == (f :: Fun) (x :: Int)</span><span>
+</span><a name="line-20"></a><span>
+</span><a name="line-21"></a></pre></body></html>
