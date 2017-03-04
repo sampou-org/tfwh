@@ -89,6 +89,51 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
 
+module TFwH.Chap01.ExG
+song :: Int -> String
+verse :: Int -> String
+line1 :: Int -> String
+line2 :: Int -> String
+line3 :: Int -> String
+line4 :: Int -> String
+count :: Int -> String
+numbers :: [String]
+numbs :: [String]
+
+module TFwH.Chap01.ExF
+type Word = String
+type Label = String
+type Labeled = (,) Label
+type Anagram = (Label, [Word])
+
+-- | anagrams n はアルファベット順の英単語リストを取り，n文字の単語だけをとりだし，文字列を生成する．
+--   結果の文字列を表示するとn文字の単語のアナグラムの一覧となるものとする．
+--   
+--   <pre>
+--   anagrams n = unlines           -- 一覧表示
+--              . map showAnagram   -- アナグラムを表示
+--              . groupByLabel      -- 同一ラベルの単語をグループ化
+--              . sortByLabel       -- アナグラムラベルでソート
+--              . map addLabel      -- アナグラムラベルを単語に追加
+--              . selectByLength n  -- n文字の単語だけ選択
+--   </pre>
+anagrams :: Int -> [Word] -> String
+
+-- | 未定義
+selectByLength :: Int -> [Word] -> [Word]
+
+-- | 未定義
+addLabel :: Word -> Labeled Word
+
+-- | 未定義
+sortByLabel :: [Labeled Word] -> [Labeled Word]
+
+-- | 未定義
+groupByLabel :: [Labeled Word] -> [Anagram]
+
+-- | 未定義
+showAnagram :: Anagram -> String
+
 module TFwH.Chap01.ExE
 type Fun = Int -> Int
 
