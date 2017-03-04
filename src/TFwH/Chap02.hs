@@ -15,6 +15,7 @@ module TFwH.Chap02
   , fact
   , to
     -- ** 型と型クラス
+  , Pin
   , Person(..)
   , samePerson
     -- ** 値の表示
