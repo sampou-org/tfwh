@@ -1,11 +1,9 @@
 {- |
    練習問題 C
-
-   $desc
 -}
 module TFwH.Chap01.ExC where
 
-{- $desc
+{- 
 
 >>> :type 'H'
 'H' :: Char
@@ -23,4 +21,5 @@ module TFwH.Chap01.ExC where
 [1,2,3]
 >>> "Hello" ++ " " ++ "World!"
 "Hello World!"
+
 -}
