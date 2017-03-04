@@ -148,7 +148,31 @@ words'' :: Text -> [Word]
 
 -- | 練習問題 C
 --   
---   $desc
+--   <pre>
+--   &gt;&gt;&gt; :type 'H'
+--   'H' :: Char
+--   
+--   &gt;&gt;&gt; :type "H"
+--   "H" :: [Char]
+--   
+--   &gt;&gt;&gt; :type 2001
+--   2001 :: Num t =&gt; t
+--   
+--   &gt;&gt;&gt; :type "2001"
+--   "2001" :: [Char]
+--   
+--   &gt;&gt;&gt; [1, 2, 3] ++ [3, 2, 1]
+--   [1,2,3,3,2,1]
+--   
+--   &gt;&gt;&gt; "Hello" ++ " World!"
+--   "Hello World!"
+--   
+--   &gt;&gt;&gt; [1, 2, 3] ++ []
+--   [1,2,3]
+--   
+--   &gt;&gt;&gt; "Hello" ++ " " ++ "World!"
+--   "Hello World!"
+--   </pre>
 module TFwH.Chap01.ExC
 
 module TFwH.Chap01.ExB
