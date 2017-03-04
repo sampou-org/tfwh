@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>TFwH.Chap01.ExA</title><link href="ocean.css" rel="stylesheet" type="text/css" title="Ocean" /><script src="haddock-util.js" type="text/javascript"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+window.onload = function () {pageLoad();setSynopsis("mini_TFwH-Chap01-ExA.html");};
+//]]>
+</script></head><body><div id="package-header"><ul class="links" id="page-menu"><li><a href="src/TFwH.Chap01.ExA.html">Source</a></li><li><a href="index.html">Contents</a></li><li><a href="doc-index.html">Index</a></li></ul><p class="caption">tfwh-0.1.0.0</p></div><div id="content"><div id="module-header"><table class="info"><tr><th>Safe Haskell</th><td>Safe</td></tr><tr><th>Language</th><td>Haskell2010</td></tr></table><p class="caption">TFwH.Chap01.ExA</p></div><div id="description"><p class="caption">Description</p><div class="doc"><p>&#31532;1&#31456; &#32244;&#32722;&#21839;&#38988; A</p></div></div><div id="synopsis"><p id="control.syn" class="caption expander" onclick="toggleSection('syn')">Synopsis</p><ul id="section.syn" class="hide" onclick="toggleSection('syn')"><li class="src short"><a href="#v:double">double</a> :: <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a> -&gt; <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a></li><li class="src short"><a href="#v:sum">sum</a> :: [<a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a>] -&gt; <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a></li><li class="src short"><a href="#v:concat">concat</a> :: [[a]] -&gt; [a]</li><li class="src short"><a href="#v:sort">sort</a> :: <a href="../base-4.9.1.0/Data-Ord.html#t:Ord">Ord</a> a =&gt; [a] -&gt; [a]</li><li class="src short"><a href="#v:insert">insert</a> :: <a href="../base-4.9.1.0/Data-Ord.html#t:Ord">Ord</a> a =&gt; a -&gt; [a] -&gt; [a]</li></ul></div><div id="interface"><h1>Documentation</h1><div class="top"><p class="src"><a id="v:double" class="def">double</a> :: <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a> -&gt; <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a> <a href="src/TFwH.Chap01.ExA.html#double" class="link">Source</a> <a href="#v:double" class="selflink">#</a></p><div class="doc"><p>&#25351;&#23450;&#12375;&#12383;&#25972;&#25968;&#12398;2&#20493;</p><pre>double x = 2 * x
+</pre><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>map double [1, 4, 4, 3]
+</code></strong>[2,8,8,6]
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>map (double . double) [1, 4, 4, 3]
+</code></strong>[4,16,16,12]
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>map double []
+</code></strong>[]
+</pre></div></div><div class="top"><p class="src"><a id="v:sum" class="def">sum</a> :: [<a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a>] -&gt; <a href="../base-4.9.1.0/Prelude.html#t:Integer">Integer</a> <a href="src/TFwH.Chap01.ExA.html#sum" class="link">Source</a> <a href="#v:sum" class="selflink">#</a></p><div class="doc"><p>&#25972;&#25968;&#12398;&#12522;&#12473;&#12488;&#12398;&#32207;&#21644;</p><pre>sum [] = 0
+sum (x:xs) = x + sum xs
+</pre><pre>&#27861;&#21063;: sum . map double = double . sum
+</pre><pre>(sum . map double) (xs :: [Integer]) == (double . sum) xs</pre><pre>[] &#12398;&#22580;&#21512;&#65306;
+  sum (map double [])
+=   { map&#12398;&#23450;&#32681; }
+  sum []
+=   { sum&#12398;&#23450;&#32681; }
+  0
+=   { &#31639;&#34899; }
+  2 * 0
+=   { double&#12398;&#23450;&#32681; }
+  double 0
+=   { sum&#12398;&#23450;&#32681; }
+  double (sum [])
+
+x:xs &#12398;&#22580;&#21512;&#65306;
+  sum (map double (x:xs))
+=   { map&#12398;&#23450;&#32681; }
+  sum (double x : map double (x:xs))
+=   { sum&#12398;&#23450;&#32681; }
+  double x + sum (map double xs)
+=   { &#24112;&#32013;&#27861;&#12398;&#20206;&#23450; }
+  double x + double (sum xs)
+=   { double&#12398;&#23450;&#32681; }
+  2 * x + 2 * sum xs
+=   { &#20998;&#37197;&#21063; }
+  2 * (x + sum xs)
+=   { sum&#12398;&#23450;&#32681; }
+  2 * (sum (x:xs))
+=   { double&#12398;&#23450;&#32681; }
+  double (sum (x:xs))
+</pre></div></div><div class="top"><p class="src"><a id="v:concat" class="def">concat</a> :: [[a]] -&gt; [a] <a href="src/TFwH.Chap01.ExA.html#concat" class="link">Source</a> <a href="#v:concat" class="selflink">#</a></p><div class="doc"><p>&#12522;&#12473;&#12488;&#12398;&#12522;&#12473;&#12488;&#12434;&#36899;&#32080;</p><pre>concat [] = []
+concat (xs:xss) = xs ++ concat xss
+</pre><pre>&#27861;&#21063;: sum . map sum = sum . concat
+</pre><pre>[] &#12398;&#22580;&#21512;&#65306;
+  sum (map sum [])
+=   { map&#12398;&#23450;&#32681; }
+  sum []
+=   { concat&#12398;&#23450;&#32681; }
+  sum (concat [])
+
+xs:xss &#12398;&#22580;&#21512;
+  sum (map sum (xs:xss))
+=   { map&#12398;&#23450;&#32681; }
+  sum (sum xs : map sum xss)
+=   { sum&#12398;&#23450;&#32681; }
+  sum xs + sum (map sum xss)
+=   { &#24112;&#32013;&#27861;&#12398;&#20206;&#23450; }
+  sum xs + sum (concat xss)
+=   { sum xs + sum ys = sum (xs ++ ys) &#12384;&#12363;&#12425; (1)}
+  sum ( xs ++ concat xss)
+=   { concat&#12398;&#23450;&#32681; }
+  sum ( concat (xs:xss))
+</pre><pre>&#20027;&#24373;(1) xs &#19978;&#12398;&#24112;&#32013;&#27861;
+
+[]&#12398;&#22580;&#21512;&#65306;
+  sum [] + sum ys
+=  { sum&#12398;&#23450;&#32681; }
+  0 + sum ys
+=  { 0&#12399;(+)&#12398;&#21336;&#20301;&#20803; }
+  sum ys
+=  { []&#12399;(++)&#12398;&#21336;&#20301;&#20803; }
+  sum ([] ++ ys)
+
+x:xs&#12398;&#22580;&#21512;&#65306;
+  sum (x:xs) + sum ys
+=   { sum&#12398;&#23450;&#32681; }
+  (x + sum xs) + sum ys
+=   { (+)&#12398;&#32080;&#21512;&#24615; }
+  x + (sum xs + sum ys)
+=   { &#24112;&#32013;&#27861;&#12398;&#20206;&#23450; }
+  x + sum (xs ++ ys)
+=   { sum &#12398;&#23450;&#32681; }
+  sum (x : (xs ++ ys))
+=   { (++)&#12398;&#23450;&#32681; }
+  sum ((x:xs) ++ ys)
+</pre></div></div><div class="top"><p class="src"><a id="v:sort" class="def">sort</a> :: <a href="../base-4.9.1.0/Data-Ord.html#t:Ord">Ord</a> a =&gt; [a] -&gt; [a] <a href="src/TFwH.Chap01.ExA.html#sort" class="link">Source</a> <a href="#v:sort" class="selflink">#</a></p><div class="doc"><p>&#25972;&#21015;</p><pre>sort [] = []
+sort (x:xs) = insert x (sort xs)
+</pre><pre>&#27861;&#21063;: sum . sort = sum
+</pre><pre>[] &#12398;&#22580;&#21512;&#65306;
+  sum (sort [])
+=   { sort&#12398;&#23450;&#32681; }
+  sum []
+
+(x:xs)
+  sum (sort (x:xs))
+=   { sort&#12398;&#20181;&#27096; }
+  sum (insert x (sort xs))
+=   { sum (insert y ys) = y + sum ys &#12384;&#12363;&#12425; (2)}
+  x + sum (sort xs)
+=   { &#24112;&#32013;&#27861;&#12398;&#20206;&#23450; }
+  x + sum xs
+=   { sum&#12398;&#23450;&#32681; }
+  sum (x:xs)
+</pre></div></div><div class="top"><p class="src"><a id="v:insert" class="def">insert</a> :: <a href="../base-4.9.1.0/Data-Ord.html#t:Ord">Ord</a> a =&gt; a -&gt; [a] -&gt; [a] <a href="src/TFwH.Chap01.ExA.html#insert" class="link">Source</a> <a href="#v:insert" class="selflink">#</a></p><div class="doc"><p>&#12477;&#12540;&#12488;&#28168;&#12415;&#12398;&#12522;&#12473;&#12488;&#12395;&#26032;&#12375;&#12356;&#35201;&#32032;&#12434;&#25407;&#20837;</p><pre>insert x [] = [x]
+insert x (y:ys) = if x &lt;= y then x : y : ys
+                  else y : insert x ys
+</pre><pre>&#20027;&#24373;(2) ys &#19978;&#12398;&#24112;&#32013;&#27861;
+
+[]&#12398;&#22580;&#21512;&#65306;
+  sum (insert x [])
+=   { insert&#12398;&#23450;&#32681; }
+  sum [x]
+=   { sum&#12398;&#23450;&#32681; }
+  x + sum []
+
+y:ys&#12398;&#22580;&#21512;&#65306; x &lt;= y &#12394;&#12425;&#12400;
+  sum (insert x (y:ys))
+=   { insert&#12398;&#23450;&#32681; }
+  sum (x:(y:ys))
+=   { sum&#12398;&#23450;&#32681; }
+  x + sum (y:ys)
+
+y:ys&#12398;&#22580;&#21512;&#65306; x &gt; y &#12394;&#12425;&#12400;
+  sum (insert x (y:ys))
+=   { insert&#12398;&#23450;&#32681; }
+  sum (y : insert x ys)
+=   { sum&#12398;&#23450;&#32681; }
+  y + sum (insert x ys)
+=   { &#24112;&#32013;&#27861;&#12398;&#20206;&#23450; }
+  y + (x + sum ys)
+=   { (+)&#12398;&#32080;&#21512;&#24615; }
+  (y + x) + sum ys
+=   { (+)&#12398;&#21487;&#25563;&#24615; }
+  (x + y) + sum ys
+=   { (+)&#12398;&#32080;&#21512;&#24615; }
+  x + (y + sum ys)
+=   { sum&#12398;&#23450;&#32681; }
+  x + sum (y:ys)
+</pre></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.17.3</p></div></body></html>
