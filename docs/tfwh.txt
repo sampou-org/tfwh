@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.0.0
+@version 0.2.1.0
 
 
 -- | One man went to mow
@@ -88,6 +88,43 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | 第1章 練習問題 A
+--   
+--   問：2足す2の半分は2かそれとも3か 答：そのとおり
+module TFwH.Chap02.ExA
+
+-- | <pre>
+--   problem' = 2 + (2 <a>div</a> 2)
+--   </pre>
+problem' :: Int
+
+-- | <pre>
+--   problem'' = (2 + 2) <a>div</a> 2
+--   </pre>
+problem'' :: Int
+
+-- | <pre>
+--   answer' = 3
+--   </pre>
+answer' :: Int
+
+-- | <pre>
+--   answer'' = 2
+--   </pre>
+answer'' :: Int
+
+-- | <pre>
+--   answer = (problem'  == answer' || problem'  == answer'' )
+--         &amp;&amp; (problem'' == answer' || problem'' == answer'' )
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; answer
+--   True
+--   </pre>
+answer :: Bool
 
 
 -- | TFwH 第2章 式,型,値
