@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.1.0
+@version 0.2.1.1
 
 
 -- | One man went to mow
@@ -90,7 +90,7 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 showRun :: (Int, Word) -> String
 
 
--- | 第1章 練習問題 A
+-- | 第2章 練習問題 A
 --   
 --   問：2足す2の半分は2かそれとも3か 答：そのとおり
 module TFwH.Chap02.ExA
