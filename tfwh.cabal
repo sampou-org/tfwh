@@ -1,5 +1,5 @@
 name:                tfwh
-version:             0.2.0.0
+version:             0.2.1.0
 -- synopsis:
 -- description:
 homepage:            https://github.com/nobsun/tfwh#readme
@@ -21,6 +21,7 @@ library
                      , TFwH.NumbersIntoWords
                      , TFwH.OneManWentToMow
                      , TFwH.Chap01
+                     , TFwH.Chap02
                      , TFwH.Chap01.ExA
                      , TFwH.Chap01.ExB
                      , TFwH.Chap01.ExC
@@ -28,7 +29,8 @@ library
                      , TFwH.Chap01.ExE
                      , TFwH.Chap01.ExF
                      , TFwH.Chap01.ExG
-                     , TFwH.Chap02
+                     , TFwH.Chap02.ExA
+
   build-depends:       base >= 4.7 && < 5
                      , hspec >= 2.4.2
   default-language:    Haskell2010

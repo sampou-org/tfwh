@@ -1,5 +1,4 @@
 -- |
---
 -- TFwH 第2章 式,型,値
 --
 module TFwH.Chap02
