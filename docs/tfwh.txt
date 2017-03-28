@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.1.1
+@version 0.2.2.0
 
 
 -- | One man went to mow
@@ -88,6 +88,30 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | 第2章 練習問題 B
+--   
+--   GHCi のプロンプトで以下のコマンドを順に試してみよう．
+--   
+--   <pre>
+--   :type [0, 1)
+--   :type double -3
+--   :type double (-3)
+--   :type double double 0
+--   :type if 1 == 0 then 2 == 1
+--   :type "++" == "+" ++ "+"
+--   :type [(+), (-)]
+--   :type [[], [[]], [[[]]]]
+--   :type concat ["tea", "for", '2']
+--   :type concat ["tea", "for", "2"]
+--   </pre>
+module TFwH.Chap02.ExB
+
+-- | <pre>
+--   double = (2 *)
+--   </pre>
+double :: Int -> Int
 
 
 -- | 第2章 練習問題 A
