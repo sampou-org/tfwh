@@ -15,7 +15,7 @@
 --        unwords . words = id
 --        @
 --
---        * unwords . words = id
+--        * words . unwords = id
 --
 --    * 関数 head :: [a] -> a は空ではないリストの先頭を返す．
 --      関数 tail :: [a] -> [a] は空ではないリストから先頭要素を取り除いた残りのリストすなわち末尾部分を返す．
@@ -43,7 +43,7 @@ modernise :: String -> String
 modernise = unwords . map capitalise . words
 
 -- |
--- 本文の解答では
+-- 実装は本文の解答では
 --
 -- @
 -- capitalise xs = [toUpper (head xs)] ++ tail xs
@@ -52,13 +52,13 @@ modernise = unwords . map capitalise . words
 -- となっているが，これだと
 --
 -- @
--- capitalise "meta-algorithmics" = "Meta-Algorithmics"
+-- capitalise "meta-algorithmics" = \"Meta-Algorithmics\"
 -- @
 --
 -- にはならない．この仕様を満すには以下のような実装が必要である．
 -- 
 -- @
--- capitalise cs = case break ('-'==) cs of
+-- capitalise cs = case break (\'-\'==) cs of
 --   (x:xs,"")   -> toUpper x : xs
 --   (x:xs,y:ys) -> toUpper x : (xs ++ y : capitalise ys)
 --   _           -> cs
