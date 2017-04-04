@@ -21,11 +21,14 @@
 --      関数 tail :: [a] -> [a] は空ではないリストから先頭要素を取り除いた残りのリストすなわち末尾部分を返す．
 --      あるリストの先頭が x で末尾部が xs だとすると，もとのリストを再構成するにはどうすればよいか．
 --
---        * x:xs
+--        * [x] ++ xs
 --
 module TFwH.Chap02.ExC where
 
 import Data.Char (toUpper)
+import Prelude hiding (Word)
+
+type Word = String
 
 -- |
 --
@@ -33,14 +36,22 @@ import Data.Char (toUpper)
 -- capitaliseTitle = unwords . map capitalize . words
 -- @
 --
--- >>> capitaliseTitle "The morphology of prex -- an essay in meta-algorithmics"
+-- >>> modernise "The morphology of prex -- an essay in meta-algorithmics"
 -- "The Morphology Of Prex -- An Essay In Meta-Algorithmics"
 --
-capitaliseTitle :: String -> String
-capitaliseTitle = unwords . map capitalise . words
+modernise :: String -> String
+modernise = unwords . map capitalise . words
 
 -- |
+-- 本文の解答では
 --
+-- @
+-- capitalise xs = [toUpper (head xs)] ++ tail xs
+-- @
+--
+-- となっているが，これだと capitalise "meta-algorithmics" ≠ "Meta-Algorithmics" である．
+-- capitalise "meta-algorithmics" ＝ "Meta-Algorithmics" であるためには以下のような実装でなければならい．
+-- 
 -- @
 -- capitalise cs = case break ('-'==) cs of
 --   (x:xs,"")   -> toUpper x : xs
