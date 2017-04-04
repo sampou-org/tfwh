@@ -49,8 +49,13 @@ modernise = unwords . map capitalise . words
 -- capitalise xs = [toUpper (head xs)] ++ tail xs
 -- @
 --
--- となっているが，これだと capitalise "meta-algorithmics" ≠ "Meta-Algorithmics" である．
--- capitalise "meta-algorithmics" ＝ "Meta-Algorithmics" であるためには以下のような実装でなければならい．
+-- となっているが，これだと
+--
+-- @
+-- capitalise "meta-algorithmics" = "Meta-Algorithmics"
+-- @
+--
+-- にはならない．この仕様を満すには以下のような実装が必要である．
 -- 
 -- @
 -- capitalise cs = case break ('-'==) cs of
@@ -64,8 +69,8 @@ modernise = unwords . map capitalise . words
 -- >>> capitalise "meta-algorithmics"
 -- "Meta-Algorithmics"
 --
+capitalise :: Word -> Word
 capitalise cs = case break ('-'==) cs of
   (x:xs,"")   -> toUpper x : xs
   (x:xs,y:ys) -> toUpper x : (xs ++ y : capitalise ys)
   _           -> cs
-
