@@ -44,7 +44,7 @@ first p xs | null xs   = error "Empty list"
 -- first' p f = head . filter p . map f
 -- @
 --
--- Beaver の first' ::
+-- Beaver の first'
 --
 -- @
 -- first'  :: (b -> Bool) -> (a -> b) -> [a] -> b
