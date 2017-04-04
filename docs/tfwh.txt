@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.3.1
+@version 0.2.3.0
 
 
 -- | One man went to mow
@@ -90,22 +90,26 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 showRun :: (Int, Word) -> String
 
 
--- | <h1>第2章 練習問題 C</h1>
+-- | 第2章 練習問題 C
 --   
---   <ul>
+--   <ol>
 --   <li>関数 toLower :: Char -&gt; Char は英字を小文字に変換する．
---   標準ライブラリの英字を大文字に変換する関数はどういう名前だと思うか．<ul><li>toUpper</li></ul></li>
---   </ul>
---   
---   <ul>
+--   標準ライブラリの英字を大文字に変換する関数はどういう名前だと思うか．</li>
 --   <li>関数 words :: String -&gt; [Word] は前章で使った関数である． プレリュード関数 unwords ::
---   [Word] -&gt; String は何をする関数だと思うか．
---   ヒント：以下の等式の一方だけが成り立つとすればどちらか．<pre>words . unwords = id unwords . words
---   = id </pre><ul><li>unwords . words = id</li></ul></li>
+--   [Word] -&gt; String は何をする関数だと思うか． ヒント：以下の等式の一方だけが成り立つとすればどちらか．</li>
+--   </ol>
+--   
+--   <pre>
+--   words . unwords = id
+--   unwords . words = id
+--   
+--   </pre>
+--   
+--   <ol>
 --   <li>関数 head :: [a] -&gt; a は空ではないリストの先頭を返す． 関数 tail :: [a] -&gt; [a]
 --   は空ではないリストから先頭要素を取り除いた残りのリストすなわち末尾部分を返す． あるリストの先頭が x で末尾部が xs
---   だとすると，もとのリストを再構成するにはどうすればよいか．<ul><li>x:xs</li></ul></li>
---   </ul>
+--   だとすると，もとのリストを再構成するにはどうすればよいか．</li>
+--   </ol>
 module TFwH.Chap02.ExC
 
 -- | <pre>
