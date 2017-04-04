@@ -126,7 +126,7 @@ first :: (a -> Bool) -> [a] -> a
 --   first' p f = head . filter p . map f
 --   </pre>
 --   
---   Beaver の first' ::
+--   Beaver の first'
 --   
 --   <pre>
 --   first'  :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b

@@ -18,7 +18,7 @@ first p xs | null xs   = error &quot;Empty list&quot;
 </code></strong>True
 </pre></div></div><div class="top"><p class="src"><a id="v:first-39-" class="def">first'</a> :: (b -&gt; <a href="../base-4.9.1.0/Data-Bool.html#t:Bool">Bool</a>) -&gt; (a -&gt; b) -&gt; [a] -&gt; b <a href="src/TFwH.Chap02.ExD.html#first%27" class="link">Source</a> <a href="#v:first-39-" class="selflink">#</a></p><div class="doc"><p>Susan &#12398; first' :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b</p><pre>first' :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
 first' p f = head . filter p . map f
-</pre><p>Beaver &#12398; first' ::</p><pre>first'  :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
+</pre><p>Beaver &#12398; first'</p><pre>first'  :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
 first' p f xs | null xs = error &quot;Empty list&quot;
               | p x     = x
               | otherwise = first' p f (tail xs)
