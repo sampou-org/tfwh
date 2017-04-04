@@ -1,4 +1,4 @@
-VER = 0.2.1.1
+VER = 0.2.3.0
 
 html	:
 	git pull

@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.1.1
+@version 0.2.3.0
 
 
 -- | One man went to mow
@@ -88,6 +88,79 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | 第2章 練習問題 C
+--   
+--   <ol>
+--   <li>関数 toLower :: Char -&gt; Char は英字を小文字に変換する．
+--   標準ライブラリの英字を大文字に変換する関数はどういう名前だと思うか．</li>
+--   <li>関数 words :: String -&gt; [Word] は前章で使った関数である． プレリュード関数 unwords ::
+--   [Word] -&gt; String は何をする関数だと思うか． ヒント：以下の等式の一方だけが成り立つとすればどちらか．</li>
+--   </ol>
+--   
+--   <pre>
+--   words . unwords = id
+--   unwords . words = id
+--   
+--   </pre>
+--   
+--   <ol>
+--   <li>関数 head :: [a] -&gt; a は空ではないリストの先頭を返す． 関数 tail :: [a] -&gt; [a]
+--   は空ではないリストから先頭要素を取り除いた残りのリストすなわち末尾部分を返す． あるリストの先頭が x で末尾部が xs
+--   だとすると，もとのリストを再構成するにはどうすればよいか．</li>
+--   </ol>
+module TFwH.Chap02.ExC
+
+-- | <pre>
+--   capitaliseTitle = unwords . map capitalize . words
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; capitaliseTitle "The morphology of prex -- an essay in meta-algorithmics"
+--   "The Morphology Of Prex -- An Essay In Meta-Algorithmics"
+--   </pre>
+capitaliseTitle :: String -> String
+
+-- | <pre>
+--   capitalise cs = case break (<a>-</a>==) cs of
+--     (x:xs,"")   -&gt; toUpper x : xs
+--     (x:xs,y:ys) -&gt; toUpper x : (xs ++ y : capitalise ys)
+--     _           -&gt; cs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; capitalise "the"
+--   "The"
+--   
+--   &gt;&gt;&gt; capitalise "meta-algorithmics"
+--   "Meta-Algorithmics"
+--   </pre>
+capitalise :: [Char] -> [Char]
+
+
+-- | 第2章 練習問題 B
+--   
+--   GHCi のプロンプトで以下のコマンドを順に試してみよう．
+--   
+--   <pre>
+--   :type [0, 1)
+--   :type double -3
+--   :type double (-3)
+--   :type double double 0
+--   :type if 1 == 0 then 2 == 1
+--   :type "++" == "+" ++ "+"
+--   :type [(+), (-)]
+--   :type [[], [[]], [[[]]]]
+--   :type concat ["tea", "for", '2']
+--   :type concat ["tea", "for", "2"]
+--   </pre>
+module TFwH.Chap02.ExB
+
+-- | <pre>
+--   double = (2 *)
+--   </pre>
+double :: Int -> Int
 
 
 -- | 第2章 練習問題 A
