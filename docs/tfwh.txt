@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.4.1
+@version 0.2.5.0
 
 
 -- | One man went to mow
@@ -88,6 +88,99 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第2章 練習問題 E</h1>
+module TFwH.Chap02.ExE
+
+-- | <pre>
+--   first :: (a -&gt; Bool) -&gt; [a] -&gt; a
+--   first p = head . filter p
+--   </pre>
+--   
+--   <pre>
+--   first :: (a -&gt; Bool) -&gt; [a] -&gt; a
+--   first p xs | null xs   = error "Empty list"
+--              | p x       = x
+--              | otherwise = firstB p (tail xs)
+--              where
+--                x = head xs
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; let firstS p = head . filter p  -- Susan版
+--   
+--   &gt;&gt;&gt; first isSquare nums == firstS isSquare nums
+--   True
+--   </pre>
+first :: (a -> Bool) -> [a] -> a
+
+-- | Susan の first' :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
+--   
+--   <pre>
+--   first' :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
+--   first' p f = head . filter p . map f
+--   </pre>
+--   
+--   Beaver の first'
+--   
+--   <pre>
+--   first'  :: (b -&gt; Bool) -&gt; (a -&gt; b) -&gt; [a] -&gt; b
+--   first' p f xs | null xs = error "Empty list"
+--                 | p x     = x
+--                 | otherwise = first' p f (tail xs)
+--                 where
+--                   x = f (head xs)
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; let first'S p f = head . filter p . map f
+--   
+--   &gt;&gt;&gt; first' isSquare (subtract 1 . (2*)) nums == first'S isSquare (subtract 1 . (2*)) nums
+--   True
+--   </pre>
+first' :: (b -> Bool) -> (a -> b) -> [a] -> b
+
+-- | より好ましい betterFistB (Beaver 版)
+--   
+--   <pre>
+--   betterFirstB :: (a -&gt; Bool) -&gt; [a] -&gt; Maybe a
+--   betterFirstB p xs
+--     | null xs   = Nothing
+--     | p x       = Just x
+--     | otherwise = betterFirstBeaver p (tail xs)
+--     where
+--       x = head xs
+--   </pre>
+betterFirstB :: (a -> Bool) -> [a] -> Maybe a
+
+-- | より好ましい betterFistS (Susan 版)
+--   
+--   <pre>
+--   betterFirstS :: (a -&gt; Bool) -&gt; [a] -&gt; Maybe a
+--   betterFirstS p = maybe Nothing (Just . fst) . uncons . filter p
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; sum nums'
+--   499999500000
+--   
+--   &gt;&gt;&gt; betterFirstB isSquare nums' == betterFirstS isSquare nums
+--   True
+--   </pre>
+betterFirstS :: (a -> Bool) -> [a] -> Maybe a
+nums :: [Int]
+nums' :: [Int]
+isSquare :: Int -> Bool
+
+-- | 多相関数 :: Maybe a -&gt; Maybe a &gt;&gt;&gt; import Control.Exception
+--   &gt;&gt;&gt;
+poly :: Int -> Maybe a -> Maybe a
+prna :: Show a => a -> IO String
+prn :: Show a => Maybe a -> IO ()
+samples :: [Maybe ()]
+ps :: Show a => [Maybe a -> IO ()]
+test :: IO ()
 
 
 -- | <h1>第2章 練習問題 D</h1>
