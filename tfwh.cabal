@@ -33,6 +33,7 @@ library
                      , TFwH.Chap02.ExB
                      , TFwH.Chap02.ExC
                      , TFwH.Chap02.ExD
+                     , TFwH.Chap02.ExE
 
   build-depends:       base >= 4.7 && < 5
                      , hspec >= 2.4.2
