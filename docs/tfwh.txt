@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.5.0
+@version 0.2.5.1
 
 
 -- | One man went to mow
@@ -169,17 +169,117 @@ betterFirstB :: (a -> Bool) -> [a] -> Maybe a
 --   True
 --   </pre>
 betterFirstS :: (a -> Bool) -> [a] -> Maybe a
+
+-- | テスト用データ 1
+--   
+--   <pre>
+--   nums :: [Int]
+--   nums =  [999999, 999998 .. 0]
+--   </pre>
 nums :: [Int]
+
+-- | テスト用データ 2 nums と同値ですが，先頭の要素を取り出した時点で長さ1000000のリストができています．
 nums' :: [Int]
+
+-- | お試し用述語
+--   
+--   <pre>
+--   isSquare :: Int -&gt; Bool
+--   isSquare = (==) <a>*</a> (^2) . round . sqrt . fromIntegral 
+--   </pre>
 isSquare :: Int -> Bool
 
--- | 多相関数 :: Maybe a -&gt; Maybe a &gt;&gt;&gt; import Control.Exception
---   &gt;&gt;&gt;
-poly :: Int -> Maybe a -> Maybe a
+-- | 多相関数 polyN :: Maybe a -&gt; Maybe a を生成する関数
+poly :: Int -> (Maybe a -> Maybe a)
+
+-- | 型クラスShowのインスタンスである型の値を表示 IO ()
 prna :: Show a => a -> IO String
+
+-- | Maybe a の値を表示 IO ()
 prn :: Show a => Maybe a -> IO ()
+
+-- | テスト用引数
 samples :: [Maybe ()]
-ps :: Show a => [Maybe a -> IO ()]
+
+-- | 表示テスト
+--   
+--   <pre>
+--   &gt;&gt;&gt; test
+--   Nothing
+--   Nothing
+--   Nothing
+--   ⊥
+--   -----
+--   Nothing
+--   Just ()
+--   Just ⊥
+--   ⊥
+--   -----
+--   Nothing
+--   Just ⊥
+--   Just ⊥
+--   ⊥
+--   -----
+--   Nothing
+--   ⊥
+--   ⊥
+--   ⊥
+--   -----
+--   Just ⊥
+--   Nothing
+--   Nothing
+--   ⊥
+--   -----
+--   Just ⊥
+--   Just ()
+--   Just ⊥
+--   ⊥
+--   -----
+--   Just ⊥
+--   Just ⊥
+--   Just ⊥
+--   ⊥
+--   -----
+--   Just ⊥
+--   ⊥
+--   ⊥
+--   ⊥
+--   -----
+--   ⊥
+--   Nothing
+--   Nothing
+--   ⊥
+--   -----
+--   ⊥
+--   Just ()
+--   Just ⊥
+--   ⊥
+--   -----
+--   ⊥
+--   Just ⊥
+--   Just ⊥
+--   ⊥
+--   -----
+--   ⊥
+--   ⊥
+--   ⊥
+--   ⊥
+--   -----
+--   Nothing
+--   Nothing
+--   Nothing
+--   Nothing
+--   -----
+--   Just ⊥
+--   Just ⊥
+--   Just ⊥
+--   Just ⊥
+--   -----
+--   Just ⊥
+--   Just ()
+--   Just ⊥
+--   Just ⊥
+--   </pre>
 test :: IO ()
 
 
