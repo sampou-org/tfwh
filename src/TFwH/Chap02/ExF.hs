@@ -52,7 +52,7 @@ expG  = fix gexpG
 -- |
 -- O(n) 回の乗算を必要とする exp のトレース版
 --
--- >>> expG'
+-- >>> expG' 2 13
 -- exp 2 13
 -- exp 2 12
 -- exp 2 11
@@ -92,7 +92,7 @@ expS  = fix gexpS
 -- |
 -- O(log n) 回の乗算を必要とする exp のトレース版
 --
--- >>> expS' 2 1
+-- >>> expS' 2 13
 -- exp 2 13
 -- exp 4 6
 -- exp 16 3
