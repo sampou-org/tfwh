@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.6.1
+@version 0.2.7.0
 
 
 -- | One man went to mow
@@ -88,6 +88,42 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第2章 練習問題 G</h1>
+--   
+--   <ul>
+--   <li><tt>showDate :: Date -&gt; String</tt> を定義せよ<pre>type Year = Int
+--   type Month = Int type Day = Int type Date = (Day, Month, Year)
+--   showDate :: Date -&gt; String showDate (d, m, y) = show d ++ suffix d
+--   ++ " " ++ months !! (m - 1) ++ ", " ++ show y months = [
+--   <a>January</a>, <a>Feburary</a>, <a>March</a>, <a>April</a> ,
+--   <a>May</a>, <a>June</a>, <a>July</a>, <a>August</a> ,
+--   <a>September</a>, <a>October</a>, <a>November</a>, <a>December</a> ]
+--   </pre></li>
+--   </ul>
+module TFwH.Chap02.ExG
+type Year = Int
+type Month = Int
+type Day = Int
+type Date = (Day, Month, Year)
+
+-- | 日付を表示文字列に変換
+--   
+--   <pre>
+--   &gt;&gt;&gt; showDate (10, 12, 2013)
+--   "10th December, 2013"
+--   
+--   &gt;&gt;&gt; showDate (21, 11, 2020)
+--   "21st November, 2020"
+--   </pre>
+showDate :: Date -> String
+
+-- | 日付序数詞の接尾辞
+suffix :: Day -> String
+
+-- | 月の名
+months :: [[Char]]
 
 
 -- | <h1>第2章 練習問題 F</h1>
