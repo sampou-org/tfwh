@@ -21,17 +21,17 @@
 --                | odd n     = x * exp (x * x) m
 --        @
 --
+--
+--    * 関数呼び出しトレース
+--
+--      以下はオマケ(説明はありません)．
+--
 module TFwH.Chap02.ExF where
 
 import Control.Monad.Fix
 import Data.List
 import Debug.Trace
 
---
--- * 関数呼び出しトレース
---
---   以下はオマケ(説明はありません)．
---
 -- |
 -- O(n) 回の乗算を必要とする expG を生成する汎関数
 --
