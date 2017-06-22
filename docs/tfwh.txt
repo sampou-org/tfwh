@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.7.0
+@version 0.2.8.0
 
 
 -- | One man went to mow
@@ -88,6 +88,70 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第2章 練習問題 H</h1>
+--   
+--   <ul>
+--   <li><tt>addSum :: CIN -&gt; CIN</tt> を構成せよ<pre>type CIN = String
+--   addSum :: CIN -&gt; CIN addSum cin = cin ++ show (n <a>div</a> 10) ++
+--   show (n <a>mod</a> 10) where n = sum (map getDigit cin) getDigit ::
+--   Char -&gt; Int getDigit c = read [c] </pre></li>
+--   </ul>
+--   
+--   <ul>
+--   <li>識別番号が正しいかどうかを判定する関数 <tt>valid :: CIN -&gt; Bool</tt>
+--   を構成せよ<pre>valid :: CIN -&gt; Bool valid cin = cin == addSum (take 8
+--   cin) </pre></li>
+--   </ul>
+module TFwH.Chap02.ExH
+type CIN = String
+
+-- | 8桁のIDにチェックサムを追加して10桁のIDにする <tt>getDigit</tt>
+--   を定義せずに，<tt>Data.Char.digitToInt :: Char -&gt; Int</tt> を使いました．
+--   剰余計算は<tt>div</tt>と<tt>mod</tt>を別々に使わず，<tt>divMod</tt> を使いました．
+--   
+--   <pre>
+--   addSum :: CIN -&gt; CIN
+--   addSum cin = cin ++ show q ++ show r
+--                where
+--                  (q,r) = sum (map digitToInt cin) <a>divMod</a> 10
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; addSum "12345678"
+--   1234567836
+--   </pre>
+addSum :: CIN -> CIN
+
+-- | 識別番号が正しいかどうかを判定する
+--   
+--   <tt>Data.Char</tt> をインポートしてより細かいチェックを実施
+--   
+--   <pre>
+--   valid :: CIN -&gt; Bool
+--   valid cin = length cin == 10
+--            &amp;&amp; all isDigit cin
+--            &amp;&amp; cin == addSum (take 8 cin)
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; valid "123456"
+--   False
+--   
+--   &gt;&gt;&gt; valid "abcd56789a4"
+--   False
+--   
+--   &gt;&gt;&gt; valide "1234567890"
+--   False
+--   
+--   &gt;&gt;&gt; valide "12345678036"
+--   False
+--   
+--   &gt;&gt;&gt; valide "1234567836"
+--   True
+--   </pre>
+valid :: CIN -> Bool
 
 
 -- | <h1>第2章 練習問題 G</h1>
