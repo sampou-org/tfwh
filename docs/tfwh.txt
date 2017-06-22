@@ -90,6 +90,86 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 showRun :: (Int, Word) -> String
 
 
+-- | <h1>第2章 練習問題 F</h1>
+--   
+--   <ul>
+--   <li>以下は x の n 乗を求める関数で，この関数では exp x n を求めるのに n-1 回の乗算が必要です．<pre>exp ::
+--   Integer -&gt; Integer -&gt; Integer exp x n | n == 0 = 1 | n == 1 = x
+--   | otherwise = x * exp x (n - 1) </pre></li>
+--   </ul>
+--   
+--   <ul>
+--   <li>尻高君の方法は以下のとおりで，乗算は高々 2p 回です．<pre>exp :: Integer -&gt; Integer
+--   -&gt; Integer exp x n | n == 0 = 1 | n == 1 = x | even n = exp (x * x)
+--   m | odd n = x * exp (x * x) m </pre></li>
+--   </ul>
+module TFwH.Chap02.ExF
+
+-- | O(n) 回の乗算を必要とする expG を生成する汎関数
+gexpG :: (Integer -> Integer -> Integer) -> (Integer -> Integer -> Integer)
+
+-- | O(n) 回の乗算を必要とする exp
+--   
+--   <pre>
+--   &gt;&gt;&gt; expG 2 13
+--   8192
+--   </pre>
+expG :: Integer -> Integer -> Integer
+
+-- | O(n) 回の乗算を必要とする exp のトレース版
+--   
+--   <pre>
+--   &gt;&gt;&gt; expG' 2 13
+--   exp 2 13
+--   exp 2 12
+--   exp 2 11
+--   exp 2 10
+--   exp 2 9
+--   exp 2 8
+--   exp 2 7
+--   exp 2 6
+--   exp 2 5
+--   exp 2 4
+--   exp 2 3
+--   exp 2 2
+--   exp 2 1
+--   8192
+--   </pre>
+expG' :: Integer -> Integer -> Integer
+
+-- | O(log n) 回の乗算を必要とする expS を生成する汎関数
+gexpS :: (Integer -> Integer -> Integer) -> (Integer -> Integer -> Integer)
+
+-- | O(log n) 回の乗算を必要とする exp
+--   
+--   <pre>
+--   &gt;&gt;&gt; expS 2 13
+--   8192
+--   </pre>
+expS :: Integer -> Integer -> Integer
+
+-- | O(log n) 回の乗算を必要とする exp のトレース版
+--   
+--   <pre>
+--   &gt;&gt;&gt; expS' 2 13
+--   exp 2 13
+--   exp 4 6
+--   exp 16 3
+--   exp 256 1
+--   8192
+--   </pre>
+expS' :: Integer -> Integer -> Integer
+
+-- | 関数呼び出しの簡単なトレースを生成
+traceOfCall :: (Show a, Show b) => String -> (a -> b -> c) -> a -> b -> c
+
+-- | トレースを追加する関数
+tracing :: (Show a, Show b) => String -> ((a -> b -> c) -> a -> b -> c) -> a -> b -> c
+
+-- | 機能 f を g に追加するした汎関数の不動点を求める
+gfun :: ((a -> b) -> (c -> d)) -> ((c -> d) -> (a -> b)) -> (c -> d)
+
+
 -- | <h1>第2章 練習問題 E</h1>
 module TFwH.Chap02.ExE
 
