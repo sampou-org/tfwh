@@ -41,7 +41,7 @@ type CIN = String
 -- @
 --
 -- >>> addSum "12345678"
--- 1234567836
+-- "1234567836"
 --
 addSum :: CIN -> CIN
 addSum cin = cin ++ show q ++ show r
@@ -64,11 +64,11 @@ addSum cin = cin ++ show q ++ show r
 -- False
 -- >>> valid "abcd56789a4"
 -- False
--- >>> valide "1234567890"
+-- >>> valid "1234567890"
 -- False
--- >>> valide "12345678036"
+-- >>> valid "12345678036"
 -- False
--- >>> valide "1234567836"
+-- >>> valid "1234567836"
 -- True
 --
 valid :: CIN -> Bool
