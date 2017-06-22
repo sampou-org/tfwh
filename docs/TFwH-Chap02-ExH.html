@@ -19,7 +19,7 @@ addSum cin = cin ++ show q ++ show r
              where
                (q,r) = sum (map digitToInt cin) <code><a href="../base-4.9.1.0/Prelude.html#v:divMod">divMod</a></code> 10
 </pre><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>addSum &quot;12345678&quot;
-</code></strong>1234567836
+</code></strong>&quot;1234567836&quot;
 </pre></div></div><div class="top"><p class="src"><a id="v:valid" class="def">valid</a> :: <a href="TFwH-Chap02-ExH.html#t:CIN">CIN</a> -&gt; <a href="../base-4.9.1.0/Data-Bool.html#t:Bool">Bool</a> <a href="src/TFwH.Chap02.ExH.html#valid" class="link">Source</a> <a href="#v:valid" class="selflink">#</a></p><div class="doc"><p>&#35672;&#21029;&#30058;&#21495;&#12364;&#27491;&#12375;&#12356;&#12363;&#12393;&#12358;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;</p><p><code>Data.Char</code> &#12434;&#12452;&#12531;&#12509;&#12540;&#12488;&#12375;&#12390;&#12424;&#12426;&#32048;&#12363;&#12356;&#12481;&#12455;&#12483;&#12463;&#12434;&#23455;&#26045;</p><pre>valid :: CIN -&gt; Bool
 valid cin = length cin == 10
          &amp;&amp; all isDigit cin
@@ -28,10 +28,10 @@ valid cin = length cin == 10
 </code></strong>False
 <code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valid &quot;abcd56789a4&quot;
 </code></strong>False
-<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valide &quot;1234567890&quot;
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valid &quot;1234567890&quot;
 </code></strong>False
-<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valide &quot;12345678036&quot;
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valid &quot;12345678036&quot;
 </code></strong>False
-<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valide &quot;1234567836&quot;
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>valid &quot;1234567836&quot;
 </code></strong>True
 </pre></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.17.3</p></div></body></html>

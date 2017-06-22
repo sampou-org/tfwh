@@ -120,7 +120,7 @@ type CIN = String
 --   
 --   <pre>
 --   &gt;&gt;&gt; addSum "12345678"
---   1234567836
+--   "1234567836"
 --   </pre>
 addSum :: CIN -> CIN
 
@@ -142,13 +142,13 @@ addSum :: CIN -> CIN
 --   &gt;&gt;&gt; valid "abcd56789a4"
 --   False
 --   
---   &gt;&gt;&gt; valide "1234567890"
+--   &gt;&gt;&gt; valid "1234567890"
 --   False
 --   
---   &gt;&gt;&gt; valide "12345678036"
+--   &gt;&gt;&gt; valid "12345678036"
 --   False
 --   
---   &gt;&gt;&gt; valide "1234567836"
+--   &gt;&gt;&gt; valid "1234567836"
 --   True
 --   </pre>
 valid :: CIN -> Bool
