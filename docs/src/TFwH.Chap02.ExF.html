@@ -21,17 +21,17 @@
 </span><a name="line-21"></a><span class="hs-comment">--                | odd n     = x * exp (x * x) m</span><span>
 </span><a name="line-22"></a><span class="hs-comment">--        @</span><span>
 </span><a name="line-23"></a><span class="hs-comment">--</span><span>
-</span><a name="line-24"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">TFwH</span><span class="hs-operator">.</span><span class="hs-identifier">Chap02</span><span class="hs-operator">.</span><span class="hs-identifier">ExF</span><span> </span><span class="hs-keyword">where</span><span>
-</span><a name="line-25"></a><span>
-</span><a name="line-26"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Control</span><span class="hs-operator">.</span><span class="hs-identifier">Monad</span><span class="hs-operator">.</span><span class="hs-identifier">Fix</span><span>
-</span><a name="line-27"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">List</span><span>
-</span><a name="line-28"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Debug</span><span class="hs-operator">.</span><span class="hs-identifier">Trace</span><span>
-</span><a name="line-29"></a><span>
-</span><a name="line-30"></a><span class="hs-comment">--</span><span>
-</span><a name="line-31"></a><span class="hs-comment">-- * &#38306;&#25968;&#21628;&#12403;&#20986;&#12375;&#12488;&#12524;&#12540;&#12473;</span><span>
-</span><a name="line-32"></a><span class="hs-comment">--</span><span>
-</span><a name="line-33"></a><span class="hs-comment">--   &#20197;&#19979;&#12399;&#12458;&#12510;&#12465;(&#35500;&#26126;&#12399;&#12354;&#12426;&#12414;&#12379;&#12435;)&#65294;</span><span>
-</span><a name="line-34"></a><span class="hs-comment">--</span><span>
+</span><a name="line-24"></a><span class="hs-comment">--</span><span>
+</span><a name="line-25"></a><span class="hs-comment">--    * &#38306;&#25968;&#21628;&#12403;&#20986;&#12375;&#12488;&#12524;&#12540;&#12473;</span><span>
+</span><a name="line-26"></a><span class="hs-comment">--</span><span>
+</span><a name="line-27"></a><span class="hs-comment">--      &#20197;&#19979;&#12399;&#12458;&#12510;&#12465;(&#35500;&#26126;&#12399;&#12354;&#12426;&#12414;&#12379;&#12435;)&#65294;</span><span>
+</span><a name="line-28"></a><span class="hs-comment">--</span><span>
+</span><a name="line-29"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">TFwH</span><span class="hs-operator">.</span><span class="hs-identifier">Chap02</span><span class="hs-operator">.</span><span class="hs-identifier">ExF</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-30"></a><span>
+</span><a name="line-31"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Control</span><span class="hs-operator">.</span><span class="hs-identifier">Monad</span><span class="hs-operator">.</span><span class="hs-identifier">Fix</span><span>
+</span><a name="line-32"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">List</span><span>
+</span><a name="line-33"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Debug</span><span class="hs-operator">.</span><span class="hs-identifier">Trace</span><span>
+</span><a name="line-34"></a><span>
 </span><a name="line-35"></a><span class="hs-comment">-- |</span><span>
 </span><a name="line-36"></a><span class="hs-comment">-- O(n) &#22238;&#12398;&#20055;&#31639;&#12434;&#24517;&#35201;&#12392;&#12377;&#12427; expG &#12434;&#29983;&#25104;&#12377;&#12427;&#27726;&#38306;&#25968;</span><span>
 </span><a name="line-37"></a><span class="hs-comment">--</span><span>

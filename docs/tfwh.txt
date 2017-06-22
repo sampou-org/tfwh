@@ -102,7 +102,10 @@ showRun :: (Int, Word) -> String
 --   <li>尻高君の方法は以下のとおりで，乗算は高々 2p 回です．<pre>exp :: Integer -&gt; Integer
 --   -&gt; Integer exp x n | n == 0 = 1 | n == 1 = x | even n = exp (x * x)
 --   m | odd n = x * exp (x * x) m </pre></li>
+--   <li>関数呼び出しトレース</li>
 --   </ul>
+--   
+--   以下はオマケ(説明はありません)．
 module TFwH.Chap02.ExF
 
 -- | O(n) 回の乗算を必要とする expG を生成する汎関数
