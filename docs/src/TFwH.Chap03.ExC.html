@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">-- |</span><span>
+</span><a name="line-2"></a><span class="hs-comment">-- = &#31532;3&#31456; &#32244;&#32722;&#21839;&#38988; C</span><span>
+</span><a name="line-3"></a><span class="hs-comment">--</span><span>
+</span><a name="line-4"></a><span class="hs-comment">-- * @div@ &#12434;&#20197;&#19979;&#12398;&#12424;&#12358;&#12395;&#23450;&#32681;&#12391;&#12365;&#12427;&#12363;</span><span>
+</span><a name="line-5"></a><span class="hs-comment">--</span><span>
+</span><a name="line-6"></a><span class="hs-comment">-- @</span><span>
+</span><a name="line-7"></a><span class="hs-comment">-- div :: Integral a =&gt; a -&gt; a -&gt; a</span><span>
+</span><a name="line-8"></a><span class="hs-comment">-- div x y = floor ( x / y)</span><span>
+</span><a name="line-9"></a><span class="hs-comment">-- @</span><span>
+</span><a name="line-10"></a><span class="hs-comment">--</span><span>
+</span><a name="line-11"></a><span class="hs-comment">-- &#31572;&#65306; (/) &#12399; Integral &#12463;&#12521;&#12473;&#12391;&#12399;&#23450;&#32681;&#12373;&#12428;&#12390;&#12356;&#12394;&#12356;&#12398;&#12391;&#12391;&#12365;&#12394;&#12356;&#65294;</span><span>
+</span><a name="line-12"></a><span class="hs-comment">--</span><span>
+</span><a name="line-13"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">TFwH</span><span class="hs-operator">.</span><span class="hs-identifier">Chap03</span><span class="hs-operator">.</span><span class="hs-identifier">ExC</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-14"></a><span>
+</span><a name="line-15"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Prelude</span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">div</span><span class="hs-special">)</span><span>
+</span><a name="line-16"></a><span>
+</span><a name="line-17"></a><span class="hs-comment">-- |</span><span>
+</span><a name="line-18"></a><span class="hs-comment">-- @</span><span>
+</span><a name="line-19"></a><span class="hs-comment">-- div x y = floor (fromIntegral x / fromIntegral y)</span><span>
+</span><a name="line-20"></a><span class="hs-comment">-- @</span><span>
+</span><a name="line-21"></a><span class="hs-comment">-- &gt;&gt;&gt; div 7 4</span><span>
+</span><a name="line-22"></a><span class="hs-comment">-- 1</span><span>
+</span><a name="line-23"></a><span class="hs-comment">--</span><span>
+</span><a name="line-24"></a><span class="hs-identifier">div</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Integral</span><span> </span><a href="#local-6989586621679033137"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">=&gt;</span><span> </span><a href="#local-6989586621679033137"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679033137"><span class="hs-identifier hs-type">a</span></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><a href="#local-6989586621679033137"><span class="hs-identifier hs-type">a</span></a><span>
+</span><a name="line-25"></a><a name="div"><a href="TFwH.Chap03.ExC.html#div"><span class="hs-identifier">div</span></a></a><span> </span><a name="local-6989586621679033138"><a href="#local-6989586621679033138"><span class="hs-identifier">x</span></a></a><span> </span><a name="local-6989586621679033139"><a href="#local-6989586621679033139"><span class="hs-identifier">y</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">floor</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">fromIntegral</span><span> </span><a href="#local-6989586621679033138"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-operator hs-var">/</span><span> </span><span class="hs-identifier hs-var">fromIntegral</span><span> </span><a href="#local-6989586621679033139"><span class="hs-identifier hs-var">y</span></a><span class="hs-special">)</span><span>
+</span><a name="line-26"></a></pre></body></html>

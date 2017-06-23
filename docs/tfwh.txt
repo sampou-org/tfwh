@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.2.0
+@version 0.3.3.0
 
 
 -- | One man went to mow
@@ -88,6 +88,31 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 C</h1>
+--   
+--   <ul>
+--   <li><tt>div</tt> を以下のように定義できるか</li>
+--   </ul>
+--   
+--   <pre>
+--   div :: Integral a =&gt; a -&gt; a -&gt; a
+--   div x y = floor ( x / y)
+--   </pre>
+--   
+--   答： (/) は Integral クラスでは定義されていないのでできない．
+module TFwH.Chap03.ExC
+
+-- | <pre>
+--   div x y = floor (fromIntegral x / fromIntegral y)
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; div 7 4
+--   1
+--   </pre>
+div :: Integral a => a -> a -> a
 
 
 -- | <h1>第3章 練習問題 B</h1>
