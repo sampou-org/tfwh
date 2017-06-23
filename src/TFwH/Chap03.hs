@@ -1,5 +1,5 @@
 -- |
--- TFwH 第3章 数値
+-- = TTFwH 第3章 数値
 --
 module TFwH.Chap03
   ( -- * 3 数値
