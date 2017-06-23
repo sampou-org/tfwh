@@ -89,10 +89,38 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
 
+
+-- | <h1>第3章 練習問題 A</h1>
+--   
+--   <tt>3 + -2</tt> と <tt>2 + subtract 3</tt> はエラー
+--   
+--   <pre>
+--   &gt;&gt;&gt; -2 + 3
+--   1
+--   
+--   &gt;&gt;&gt; 3 + (-2)
+--   1
+--   
+--   &gt;&gt;&gt; subtract 2 3
+--   1
+--   </pre>
 module TFwH.Chap03.ExA
 
+-- | <pre>
+--   import Prelude hiding (subtract)
+--   
+--   subtract :: Num a =&gt; a -&gt; a -&gt; a
+--   subtract = flip (-)
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; subtract 2 3
+--   1
+--   </pre>
+subtract :: Num a => a -> a -> a
 
--- | <h1>TFwH 第3章 数値</h1>
+
+-- | <h1>TTFwH 第3章 数値</h1>
 module TFwH.Chap03
 
 -- | 尻高版 floor
