@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.3.0
+@version 0.3.4.0
 
 
 -- | One man went to mow
@@ -88,6 +88,47 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 D</h1>
+--   
+--   <ul>
+--   <li>尻高君の floor では上手くいかない理由は科学記法による浮動小数点数表記以外に何があるか．</li>
+--   </ul>
+--   
+--   <pre>
+--   floor :: Float -&gt; Integer
+--   floor = read . takeWhile (/= <a>.</a>) . show
+--   </pre>
+--   
+--   答： floor (-3.1) を評価すると -4 ではなく -3 になる．
+module TFwH.Chap03.ExD
+
+-- | 尻高君の floor
+floorS :: Float -> Integer
+
+-- | 尻高君のアイデアを無理に活かした実装．Numeric モジュールをインポートして showFFloat を使えばなんとなるかな．
+--   
+--   <pre>
+--   floorS' :: Float -&gt; Integer
+--   floorS' x = if "0." == take 2 (reverse s) || 0 &lt; x then r else r-1
+--     where
+--       s = showFFloat Nothing x ""
+--       t = takeWhile (/= <a>.</a>) s
+--       r = read t
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; floorS' (12345678.0 :: Float)
+--   12345678
+--   
+--   &gt;&gt;&gt; floorS' (-3.1)
+--   -4
+--   
+--   &gt;&gt;&gt; floorS' (-3.0)
+--   -3
+--   </pre>
+floorS' :: Float -> Integer
 
 
 -- | <h1>第3章 練習問題 C</h1>
