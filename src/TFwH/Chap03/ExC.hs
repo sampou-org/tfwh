@@ -15,7 +15,9 @@ module TFwH.Chap03.ExC where
 import Prelude hiding (div)
 
 -- |
---
+-- @
+-- div x y = floor (fromIntegral x / fromIntegral y)
+-- @
 -- >>> div 7 4
 -- 1
 --
