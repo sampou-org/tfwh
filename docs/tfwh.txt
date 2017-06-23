@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.1.0
+@version 0.3.1.1
 
 
 -- | One man went to mow
@@ -92,7 +92,20 @@ showRun :: (Int, Word) -> String
 
 -- | <h1>第3章 練習問題 A</h1>
 --   
---   <tt>3 + -2</tt> と <tt>2 + subtract 3</tt> はエラー
+--   <ul>
+--   <li>1 を表示するのは次のうちどれか</li>
+--   </ul>
+--   
+--   <pre>
+--   -2 + 3
+--   3 + -2
+--   3 + (-2)
+--   subtract 2 3
+--   2 + subtract 3
+--   
+--   </pre>
+--   
+--   <tt> 3 + -2 </tt>と<tt> 2 + subtract 3 </tt>はエラー
 --   
 --   <pre>
 --   &gt;&gt;&gt; -2 + 3
@@ -125,9 +138,6 @@ module TFwH.Chap03
 
 -- | 尻高版 floor
 floorS :: Float -> Integer
-
--- | 尻高君のアイデアを活かした floor
-floorS' :: Float -> Integer
 
 -- | 最初の素朴な版 floor (負値)
 floor0n :: Float -> Integer
