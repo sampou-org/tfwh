@@ -7,7 +7,6 @@ module TFwH.Chap03
     -- ** 3.2 名前と演算子
     -- ** 3.3 床値の計算
     floorS
-  , floorS'
   , floor0n
   , floor0p
     -- *** 二分探索
@@ -36,12 +35,6 @@ m `leq` x = fromInteger m <= x
 --
 floorS :: Float -> Integer
 floorS = read . takeWhile (/= '.') . show
-
--- |
--- 尻高君のアイデアを活かした floor
---
-floorS' :: Float -> Integer
-floorS' = read . takeWhile (/= '.') . flip (showFFloat Nothing) ""
 
 -- |
 -- 最初の素朴な版 floor (負値)
