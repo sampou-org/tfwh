@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.0.0
+@version 0.3.1.0
 
 
 -- | One man went to mow
@@ -89,8 +89,10 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
 
+module TFwH.Chap03.ExA
 
--- | TFwH 第3章 数値
+
+-- | <h1>TFwH 第3章 数値</h1>
 module TFwH.Chap03
 
 -- | 尻高版 floor
