@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.1.1
+@version 0.3.2.0
 
 
 -- | One man went to mow
@@ -88,6 +88,31 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 B</h1>
+--   
+--   <ul>
+--   <li><tt>(^^)</tt> はどのように定義するか</li>
+--   </ul>
+--   
+--   <pre>
+--   import Prelude hiding ((^^))
+--   
+--   (^^) :: (Fractional a, Integral b) =&gt; a -&gt; b -&gt; a
+--   x ^^ p = if p &lt; 0 then recip (x ^ abs p) else x ^ p
+--   
+--   </pre>
+module TFwH.Chap03.ExB
+
+-- | <pre>
+--   &gt;&gt;&gt; 2.5 ^^ 2
+--   6.25
+--   
+--   &gt;&gt;&gt; 2.5 ^^ (-2)
+--   0.16
+--   </pre>
+(^^) :: (Fractional a, Integral b) => a -> b -> a
 
 
 -- | <h1>第3章 練習問題 A</h1>
