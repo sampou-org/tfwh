@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.4.0
+@version 0.3.5.0
 
 
 -- | One man went to mow
@@ -88,6 +88,45 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 E</h1>
+--   
+--   <ul>
+--   <li><tt>isqrt :: Float -&gt; Integer</tt> は非負数の平方根の床を返す関数である． 3.3
+--   節の戦略に従って，<tt>isqrt x</tt> を log x ステップで計算する実装を構成せよ．</li>
+--   </ul>
+--   
+--   <pre>
+--   isqrt :: Float -&gt; Integer
+--   isqrt x = fst (until unit (shrink x) (bound x))
+--     where
+--       unit (m,n) = m + 1 == n
+--      
+--   shrink :: Float -&gt; Interval -&gt; Interval
+--   shrink x (m, n) = if (p * p) <a>leq</a> x then (p, n) else (m, p)
+--     where
+--       p = (m + n) <a>div</a> 2
+--   
+--   bound :: Float -&gt; Interval
+--   bound x = (0, until above (* 2) 1)
+--     where
+--       above n = x <a>lt</a> (n * n)
+--   </pre>
+module TFwH.Chap03.ExE
+type Interval = (Integer, Integer)
+
+-- | 非負数の平方根の床を返す
+--   
+--   <pre>
+--   &gt;&gt;&gt; isqrt 123456.78
+--   351
+--   </pre>
+isqrt :: Float -> Integer
+shrink :: Float -> Interval -> Interval
+bound :: Float -> Interval
+leq :: Integer -> Float -> Bool
+lt :: Float -> Integer -> Bool
 
 
 -- | <h1>第3章 練習問題 D</h1>
