@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.2.8.0
+@version 0.3.0.0
 
 
 -- | One man went to mow
@@ -88,6 +88,79 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | TFwH 第3章 数値
+module TFwH.Chap03
+
+-- | 尻高版 floor
+floorS :: Float -> Integer
+
+-- | 尻高君のアイデアを活かした floor
+floorS' :: Float -> Integer
+
+-- | 最初の素朴な版 floor (負値)
+floor0n :: Float -> Integer
+
+-- | 最初の素朴な版 floor (非負値)
+floor0p :: Float -> Integer
+
+-- | 二分探索版 floor
+floor1 :: Float -> Integer
+
+-- | 区間の縮小
+shrink :: Float -> Interval -> Interval
+
+-- | 新しい境界の選択
+choose :: Interval -> Integer
+
+-- | 最初の区間
+bound :: Float -> Interval
+
+-- | 最初の下側境界
+lower :: Float -> Integer
+
+-- | 最初の上側境界
+upper :: Float -> Integer
+
+-- | 自然数
+data Nat
+Zero :: Nat
+Succ :: Nat -> Nat
+instance GHC.Show.Show TFwH.Chap03.Nat
+instance GHC.Classes.Ord TFwH.Chap03.Nat
+instance GHC.Classes.Eq TFwH.Chap03.Nat
+instance GHC.Num.Num TFwH.Chap03.Nat
+
+
+-- | <h1>第2章 練習問題 I</h1>
+--   
+--   <ul>
+--   <li>入力文字列が回文になっているかを判定する対話プログラム<tt>palindrome :: IO
+--   ()</tt>を書け<pre>import Data.Char parindrome :: IO () prindrome = do {
+--   putStrLn "Enter a string:" ; xs &lt;- getLine ; if isPalindrome xs
+--   then putStrLn "Yes!" else putStrLn "No!" } isPalindrome :: String
+--   -&gt; Bool isPalindrome xs = (ys == reverse ys) where ys = map toLower
+--   (filter isAlpha xs) </pre></li>
+--   </ul>
+module TFwH.Chap02.ExI
+
+-- | 入力文字列が回文になっているかを判定する対話プログラム
+palindrome :: IO ()
+
+-- | 文字列が回文かどうかを判定する述語
+--   
+--   <pre>
+--   &gt;&gt;&gt; isPalindrome "Madam, I'm Adam"
+--   True
+--   
+--   &gt;&gt;&gt; isPalindrome "A Man, a plan, a canal - Suez!"
+--   False
+--   
+--   &gt;&gt;&gt; isPalindrome "A Man, a plan, a canal - Panama"
+--   True
+--   </pre>
+isPalindrome :: String -> Bool
 
 
 -- | <h1>第2章 練習問題 H</h1>

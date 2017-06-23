@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>TFwH.Chap02.ExI</title><link href="ocean.css" rel="stylesheet" type="text/css" title="Ocean" /><script src="haddock-util.js" type="text/javascript"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+window.onload = function () {pageLoad();setSynopsis("mini_TFwH-Chap02-ExI.html");};
+//]]>
+</script></head><body><div id="package-header"><ul class="links" id="page-menu"><li><a href="src/TFwH.Chap02.ExI.html">Source</a></li><li><a href="index.html">Contents</a></li><li><a href="doc-index.html">Index</a></li></ul><p class="caption">tfwh-0.3.0.0</p></div><div id="content"><div id="module-header"><table class="info"><tr><th>Safe Haskell</th><td>Safe</td></tr><tr><th>Language</th><td>Haskell2010</td></tr></table><p class="caption">TFwH.Chap02.ExI</p></div><div id="description"><p class="caption">Description</p><div class="doc"><h1>&#31532;2&#31456; &#32244;&#32722;&#21839;&#38988; I</h1><ul><li><p>&#20837;&#21147;&#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#23550;&#35441;&#12503;&#12525;&#12464;&#12521;&#12512;<code>palindrome :: IO ()</code>&#12434;&#26360;&#12369;</p><pre>import Data.Char
+
+parindrome :: IO ()
+prindrome
+  = do { putStrLn &quot;Enter a string:&quot;
+       ; xs &lt;- getLine
+       ; if isPalindrome xs then putStrLn &quot;Yes!&quot;
+         else putStrLn &quot;No!&quot;
+       }
+
+isPalindrome :: String -&gt; Bool
+isPalindrome xs = (ys == reverse ys)
+                  where
+                    ys = map toLower (filter isAlpha xs)
+</pre></li></ul></div></div><div id="synopsis"><p id="control.syn" class="caption expander" onclick="toggleSection('syn')">Synopsis</p><ul id="section.syn" class="hide" onclick="toggleSection('syn')"><li class="src short"><a href="#v:palindrome">palindrome</a> :: <a href="../base-4.9.1.0/System-IO.html#t:IO">IO</a> ()</li><li class="src short"><a href="#v:isPalindrome">isPalindrome</a> :: <a href="../base-4.9.1.0/Data-String.html#t:String">String</a> -&gt; <a href="../base-4.9.1.0/Data-Bool.html#t:Bool">Bool</a></li></ul></div><div id="interface"><h1>Documentation</h1><div class="top"><p class="src"><a id="v:palindrome" class="def">palindrome</a> :: <a href="../base-4.9.1.0/System-IO.html#t:IO">IO</a> () <a href="src/TFwH.Chap02.ExI.html#palindrome" class="link">Source</a> <a href="#v:palindrome" class="selflink">#</a></p><div class="doc"><p>&#20837;&#21147;&#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#23550;&#35441;&#12503;&#12525;&#12464;&#12521;&#12512;</p></div></div><div class="top"><p class="src"><a id="v:isPalindrome" class="def">isPalindrome</a> :: <a href="../base-4.9.1.0/Data-String.html#t:String">String</a> -&gt; <a href="../base-4.9.1.0/Data-Bool.html#t:Bool">Bool</a> <a href="src/TFwH.Chap02.ExI.html#isPalindrome" class="link">Source</a> <a href="#v:isPalindrome" class="selflink">#</a></p><div class="doc"><p>&#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12363;&#12393;&#12358;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#36848;&#35486;</p><pre class="screen"><code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>isPalindrome &quot;Madam, I'm Adam&quot;
+</code></strong>True
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>isPalindrome &quot;A Man, a plan, a canal - Suez!&quot;
+</code></strong>False
+<code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>isPalindrome &quot;A Man, a plan, a canal - Panama&quot;
+</code></strong>True
+</pre></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.17.3</p></div></body></html>

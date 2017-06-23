@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">-- |</span><span>
+</span><a name="line-2"></a><span class="hs-comment">-- = &#31532;2&#31456; &#32244;&#32722;&#21839;&#38988; I</span><span>
+</span><a name="line-3"></a><span class="hs-comment">-- </span><span>
+</span><a name="line-4"></a><span class="hs-comment">--    * &#20837;&#21147;&#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#23550;&#35441;&#12503;&#12525;&#12464;&#12521;&#12512;@palindrome :: IO ()@&#12434;&#26360;&#12369;</span><span>
+</span><a name="line-5"></a><span class="hs-comment">--</span><span>
+</span><a name="line-6"></a><span class="hs-comment">--        @</span><span>
+</span><a name="line-7"></a><span class="hs-comment">--        import Data.Char</span><span>
+</span><a name="line-8"></a><span class="hs-comment">--</span><span>
+</span><a name="line-9"></a><span class="hs-comment">--        parindrome :: IO ()</span><span>
+</span><a name="line-10"></a><span class="hs-comment">--        prindrome</span><span>
+</span><a name="line-11"></a><span class="hs-comment">--          = do { putStrLn &quot;Enter a string:&quot;</span><span>
+</span><a name="line-12"></a><span class="hs-comment">--               ; xs &lt;- getLine</span><span>
+</span><a name="line-13"></a><span class="hs-comment">--               ; if isPalindrome xs then putStrLn &quot;Yes!&quot;</span><span>
+</span><a name="line-14"></a><span class="hs-comment">--                 else putStrLn &quot;No!&quot;</span><span>
+</span><a name="line-15"></a><span class="hs-comment">--               }</span><span>
+</span><a name="line-16"></a><span class="hs-comment">--</span><span>
+</span><a name="line-17"></a><span class="hs-comment">--        isPalindrome :: String -&gt; Bool</span><span>
+</span><a name="line-18"></a><span class="hs-comment">--        isPalindrome xs = (ys == reverse ys)</span><span>
+</span><a name="line-19"></a><span class="hs-comment">--                          where</span><span>
+</span><a name="line-20"></a><span class="hs-comment">--                            ys = map toLower (filter isAlpha xs)</span><span>
+</span><a name="line-21"></a><span class="hs-comment">--        @</span><span>
+</span><a name="line-22"></a><span class="hs-comment">--</span><span>
+</span><a name="line-23"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">TFwH</span><span class="hs-operator">.</span><span class="hs-identifier">Chap02</span><span class="hs-operator">.</span><span class="hs-identifier">ExI</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-24"></a><span>
+</span><a name="line-25"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Char</span><span>
+</span><a name="line-26"></a><span>
+</span><a name="line-27"></a><span class="hs-comment">-- |</span><span>
+</span><a name="line-28"></a><span class="hs-comment">-- &#20837;&#21147;&#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#23550;&#35441;&#12503;&#12525;&#12464;&#12521;&#12512;</span><span>
+</span><a name="line-29"></a><span class="hs-comment">--</span><span>
+</span><a name="line-30"></a><span class="hs-identifier">palindrome</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">IO</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-31"></a><a name="palindrome"><a href="TFwH.Chap02.ExI.html#palindrome"><span class="hs-identifier">palindrome</span></a></a><span>
+</span><a name="line-32"></a><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-special">{</span><span> </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-string">&quot;Enter a string:&quot;</span><span>
+</span><a name="line-33"></a><span>       </span><span class="hs-special">;</span><span> </span><a name="local-6989586621679035123"><a href="#local-6989586621679035123"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier hs-var">getLine</span><span>
+</span><a name="line-34"></a><span>       </span><span class="hs-special">;</span><span> </span><span class="hs-keyword">if</span><span> </span><a href="TFwH.Chap02.ExI.html#isPalindrome"><span class="hs-identifier hs-var">isPalindrome</span></a><span> </span><a href="#local-6989586621679035123"><span class="hs-identifier hs-var">xs</span></a><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-string">&quot;Yes!&quot;</span><span>
+</span><a name="line-35"></a><span>         </span><span class="hs-keyword">else</span><span> </span><span class="hs-identifier hs-var">putStrLn</span><span> </span><span class="hs-string">&quot;No!&quot;</span><span>
+</span><a name="line-36"></a><span>       </span><span class="hs-special">}</span><span>
+</span><a name="line-37"></a><span>
+</span><a name="line-38"></a><span class="hs-comment">-- |</span><span>
+</span><a name="line-39"></a><span class="hs-comment">-- &#25991;&#23383;&#21015;&#12364;&#22238;&#25991;&#12363;&#12393;&#12358;&#12363;&#12434;&#21028;&#23450;&#12377;&#12427;&#36848;&#35486;</span><span>
+</span><a name="line-40"></a><span class="hs-comment">--</span><span>
+</span><a name="line-41"></a><span class="hs-comment">-- &gt;&gt;&gt; isPalindrome &quot;Madam, I'm Adam&quot;</span><span>
+</span><a name="line-42"></a><span class="hs-comment">-- True</span><span>
+</span><a name="line-43"></a><span class="hs-comment">-- &gt;&gt;&gt; isPalindrome &quot;A Man, a plan, a canal - Suez!&quot;</span><span>
+</span><a name="line-44"></a><span class="hs-comment">-- False</span><span>
+</span><a name="line-45"></a><span class="hs-comment">-- &gt;&gt;&gt; isPalindrome &quot;A Man, a plan, a canal - Panama&quot;</span><span>
+</span><a name="line-46"></a><span class="hs-comment">-- True</span><span>
+</span><a name="line-47"></a><span class="hs-comment">--</span><span>
+</span><a name="line-48"></a><span class="hs-identifier">isPalindrome</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">Bool</span><span>
+</span><a name="line-49"></a><a name="isPalindrome"><a href="TFwH.Chap02.ExI.html#isPalindrome"><span class="hs-identifier">isPalindrome</span></a></a><span> </span><a name="local-6989586621679035124"><a href="#local-6989586621679035124"><span class="hs-identifier">xs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><a href="#local-6989586621679035125"><span class="hs-identifier hs-var">ys</span></a><span> </span><span class="hs-operator hs-var">==</span><span> </span><span class="hs-identifier hs-var">reverse</span><span> </span><a href="#local-6989586621679035125"><span class="hs-identifier hs-var">ys</span></a><span class="hs-special">)</span><span>
+</span><a name="line-50"></a><span>                  </span><span class="hs-keyword">where</span><span>
+</span><a name="line-51"></a><span>                    </span><a name="local-6989586621679035125"><a href="#local-6989586621679035125"><span class="hs-identifier">ys</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">map</span><span> </span><span class="hs-identifier hs-var">toLower</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">filter</span><span> </span><span class="hs-identifier hs-var">isAlpha</span><span> </span><a href="#local-6989586621679035124"><span class="hs-identifier hs-var">xs</span></a><span class="hs-special">)</span><span>
+</span><a name="line-52"></a></pre></body></html>
