@@ -57,7 +57,7 @@ bound x = (0, until above (* 2) 1)
 leq :: Integer -> Float -> Bool
 m `leq` x = fromIntegral m <= x
 
---|
+-- |
 -- ＜
 --
 lt :: Float -> Integer -> Bool
