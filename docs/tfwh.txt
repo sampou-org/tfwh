@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.5.0
+@version 0.3.6.0
 
 
 -- | One man went to mow
@@ -88,6 +88,44 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 F</h1>
+--   
+--   <ul>
+--   <li>y が √x の近似であるとき，x / y も √x の近似であるが，これらより良い近似は何か．</li>
+--   </ul>
+--   
+--   答： (y + x <i> y) </i> 2
+--   
+--   <ul>
+--   <li>絶対誤差検査と相対誤差検査のどちらが適切か．</li>
+--   </ul>
+--   
+--   答： 相対誤差検査
+--   
+--   <ul>
+--   <li><tt>sqrt :: Float -&gt; Float</tt> を定義せよ．</li>
+--   </ul>
+--   
+--   <pre>
+--   sqrt :: Float -&gt; Float
+--   sqrt x = until goodenough improve x
+--     where
+--       goodenough y = abs (y * y - x) &lt; eps * x
+--       improve y = (y + x <i> y) </i> 2
+--       eps = 0.000001
+--   </pre>
+module TFwH.Chap03.ExF
+
+-- | Float の平方根
+sqrt :: Float -> Float
+
+-- | Float の平方根 相対誤差の閾値 eps として Float の機械イプシロンを使う
+sqrt' :: Float -> Float
+
+-- | Floatに対する機械イプシロン
+meps :: Float
 
 
 -- | <h1>第3章 練習問題 E</h1>
