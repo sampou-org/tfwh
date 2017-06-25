@@ -3,7 +3,7 @@
 
 
 @package tfwh
-@version 0.3.6.0
+@version 0.3.7.0
 
 
 -- | One man went to mow
@@ -88,6 +88,45 @@ sortRuns :: [(Int, Word)] -> [(Int, Word)]
 
 -- | 単語と出現回数をを表示する文字列を生成する
 showRun :: (Int, Word) -> String
+
+
+-- | <h1>第3章 練習問題 G</h1>
+--   
+--   <ul>
+--   <li>Nat を型クラスOrd のインスタンスとして定義せよ．そのうえで，以下のdivMod の定義を構成せよ． <tt>divMod
+--   :: Nat -&gt; Nat -&gt; (Nat, Nat)</tt></li>
+--   </ul>
+--   
+--   <pre>
+--   instance Ord Nat where
+--     Zero &lt;= Zero   = True
+--     Zero &lt;= Succ n = True
+--     Succ m &lt;= Zero = False
+--     Succ m &lt;= Succ n = m &lt;= n
+--   
+--   divMod :: Nat -&gt; Nat -&gt; (Nat, Nat)
+--   divMod x y = if x &lt; y then (Zero, x)
+--                else (Succ q, r)
+--     where
+--       (q, r) = divMod (x - y) y
+--   </pre>
+module TFwH.Chap03.ExG
+
+-- | 自然数
+data Nat
+Zero :: Nat
+Succ :: Nat -> Nat
+
+-- | 順序 Ord クラスのインスタンス
+
+-- | 数値 Num クラスのインスタンス
+
+-- | Nat 上の剰余算
+divMod :: Nat -> Nat -> (Nat, Nat)
+instance GHC.Show.Show TFwH.Chap03.ExG.Nat
+instance GHC.Classes.Eq TFwH.Chap03.ExG.Nat
+instance GHC.Classes.Ord TFwH.Chap03.ExG.Nat
+instance GHC.Num.Num TFwH.Chap03.ExG.Nat
 
 
 -- | <h1>第3章 練習問題 F</h1>
