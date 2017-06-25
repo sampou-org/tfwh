@@ -37,6 +37,27 @@
 	  </thead>
 	  <tbody>
 	    <tr>
+	      <td style="text-align: left">2017-06-25</td>
+	      <td style="text-align: left">p.068 (問題G)</td>
+	      <td style="text-align: left">(誤)<br>
+		instance Ord Nat where<br>
+		　Zero < Zero     = False<br>
+	        　Zero < Succ n   = True<br>
+	        　Succ m < Zero   = False<br>
+		　Succ m < Succ n = m < n<br>(正) (<=)の定義を与えるだけでよい<br>
+		instance Ord Nat where<br>
+                　Zero <= Zero     = True<br>
+                　Zero <= Succ n   = True<br>
+                　Succ m <= Zero   = False<br>
+                　Succ m <= Succ n = m <= n<br>
+		</td>
+	    </tr>
+	    <tr>
+	      <td style="text-align: left">2017-06-25</td>
+	      <td style="text-align: left">p.068 L.-7 (問題G)</td>
+	      <td style="text-align: left">(誤) (<)の定義を与えるだけでよい<br>(正) (<=)の定義を与えるだけでよい</td>
+	    </tr>
+	    <tr>
 	      <td style="text-align: left">2017-04-04</td>
 	      <td style="text-align: left">p.053 L.15</td>
 	      <td style="text-align: left">(誤) 4章で〜説明する．<br>(正) (トル)</td>
