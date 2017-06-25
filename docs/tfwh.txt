@@ -123,9 +123,17 @@ type Interval = (Integer, Integer)
 --   351
 --   </pre>
 isqrt :: Float -> Integer
+
+-- | 区間の縮小
 shrink :: Float -> Interval -> Interval
+
+-- | 最初の区間
 bound :: Float -> Interval
+
+-- | ≦
 leq :: Integer -> Float -> Bool
+
+-- | ＜
 lt :: Float -> Integer -> Bool
 
 
