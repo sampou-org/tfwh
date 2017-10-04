@@ -1,5 +1,5 @@
 name:                tfwh
-version:             0.3.7.0
+version:             0.4.3.0
 -- synopsis:
 -- description:
 homepage:            https://github.com/nobsun/tfwh#readme
@@ -23,6 +23,7 @@ library
                      , TFwH.Chap01
                      , TFwH.Chap02
                      , TFwH.Chap03
+                     , TFwH.Chap04
                      , TFwH.Chap01.ExA
                      , TFwH.Chap01.ExB
                      , TFwH.Chap01.ExC
@@ -46,6 +47,9 @@ library
                      , TFwH.Chap03.ExE
                      , TFwH.Chap03.ExF
                      , TFwH.Chap03.ExG
+                     , TFwH.Chap04.ExA
+                     , TFwH.Chap04.ExB
+                     , TFwH.Chap04.ExC
 
   build-depends:       base >= 4.7 && < 5
                      , hspec >= 2.4.2
